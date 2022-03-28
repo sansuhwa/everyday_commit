@@ -176,7 +176,64 @@ def winner_draw():
     return print(f'Whe winner is ... {winner}')
 
 
-    
+    # 36. 통계 계산
+# 반복수 라는 변수를 만듦
+#응답시간_리스트 라는 리스트 생성
+# 응답시간 질문이라는 변수가 done일 때 까지
+    # 응답시간이라는 변수로 인풋값을 받음
+    # 만약 응답시간이 done이 아니라면
+        #응답시간_리스트에 응답시간 추가하기
+        #반복수 += 1
+# 평균응답시간 = sum(응답시간_리스트) / 반복수
+# 최소응답시간 = min(응답시간_리스트)
+# 최대응답시간 = max(응답시간_리스트)
+# 표준편차 = []
+# for i in 응답시간_리스트:
+    # 표준편차 += (i - 평균응답시간) ** 2
+#표준편차 = (sum(표준편차) / len(표준편차)) ** 0.5
+# return print(평균응답시간, 최소응답시간, 최대응답시간, 표준편차)
+
+
+# def 통계계산():
+#     반복수 = 0
+#     응답시간_리스트 = []
+#     while 응답시간_리스트 == 'done':
+#         응답시간 = input('Enter a number: \n')
+#         if 응답시간 != 'done':
+#             응답시간_리스트 += 응답시간
+#             반복수 += 1
+#     try:
+#         평균응답시간 = sum(응답시간_리스트) / 반복수
+#     except ZeroDivisionError:
+#             print(ZeroDivisionError)
+#     최소응답시간 = min(응답시간_리스트)
+#     최대응답시간 = max(응답시간_리스트)
+#     표준편차 = []    
+#     for i in 응답시간_리스트:
+#         표준편차 += (i - 평균응답시간) ** 2
+#     try:
+#         표준편차 = (sum(표준편차) / len(표준편차)) ** 0.5
+#     except ZeroDivisionError:
+#         print(ZeroDivisionError)
+        
+#     return print(평균응답시간, 최소응답시간, 최대응답시간, 표준편차)
+
+
+# 36. 통계 계산 다시 풀기
+#응답대기시간리스트 라는 리스트를 만든다
+#반복 응답대기시간 == 'done'
+    #응답대기시간 이라는 변수로 인풋을 받는다
+    #응답대기시간리스트 += 응답대기시간
+def 통계계산():
+    응답대기시간리스트 = []
+    while True:
+        응답대기시간 = input('Enter')
+        if 응답대기시간 == 'done':
+            break
+        else:
+            응답대기시간리스트 += 응답대기시간
+    평균 = sum(응답대기시간리스트) / len(응답대기시간리스트)
+    return 평균 
 
 
 if __name__ == "__main__":
@@ -188,4 +245,5 @@ if __name__ == "__main__":
     # pulse()
     # magic_ball()
     # select_del()
-    winner_draw()
+    # winner_draw()
+    통계계산()
