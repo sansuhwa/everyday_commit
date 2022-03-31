@@ -236,6 +236,41 @@ def 통계계산():
     return 평균 
 
 
+# 37. 암호생성기
+import random
+import string
+def password_generator():
+    # 10
+    min_len = int_input("What's the minimum length? ")
+    # 2
+    special_len = int_input("How many special characters? ")
+    # 2
+    numbers_len = int_input("How many numbers? ")
+
+    # 알파벳을 (랜덤) 6개 쓴다
+    # 특수기호 = '!@#$%^&*()_'
+    # 특수기호를 (랜덤) 2개 쓴다
+    # 숫자를 (랜덤) 2개 쓴다
+    # 다 섞는다
+
+    # random.choice(string.ascii_lowercase)
+    # 'abcdef'
+    alphas = 'abcdefghijklmnopqrstuvwxyz'
+    alpha = random.choices(alphas, k=min_len)
+    #~!@#$%^&*() 중에서 2개를 랜덤으로
+    # ['!' ,'@']
+    specials = '~!@#$%^&*()'
+    special = random.choices(specials, k=special_len)
+    # ['0', '6']
+    numbers = '0123456789'
+    number = random.choices(numbers, k=numbers_len)
+
+    password_list = alpha + special + number
+    # password_list -> string
+    password_shuffle = random.shuffle(password_list)
+    password = ''.join(password_list)
+
+    print(f"Your password is {password}")
 if __name__ == "__main__":
     # addnum()
     # addnum_2()
@@ -246,4 +281,5 @@ if __name__ == "__main__":
     # magic_ball()
     # select_del()
     # winner_draw()
-    통계계산()
+    # 통계계산()
+    password_generator()
