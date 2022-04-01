@@ -271,6 +271,40 @@ def password_generator():
     password = ''.join(password_list)
 
     print(f"Your password is {password}")
+
+
+    # 38. 필터링 값
+#even_filter() 라는 함수를 만듦
+def even_filter():
+#num_list 라는 리스트를 만듦
+    num_list = []
+    #num이라는 변수로 int_input을 받음
+    num = int_input('Enter a list of numbers, separated by spaces: ')
+    #num_list에 num을 추가하기
+    num_list.append(num)
+#num_list를 for문 돌리기
+    for n in num_list:
+    #if num / 2 != 0:
+        if num / 2 != 0:
+        #num_list.remove(num)
+            num_list.remove(num)
+#num_str = ''.join(num_list)
+    num_str = ''.join(num_list)
+#프린트하기
+    print(f'{num_str}')
+
+# 38. 다시풀기
+#numbers라는 변수로 인풋을 받음 -> str
+#공백을 기점으로 split 해서 리스트로 만듦
+def even_filter2():
+    numbers: str = input('Enter a list of numbers, separated by spaces: ')
+    numbers_list = numbers.split(' ')
+    for n in numbers_list:
+        if int(n) % 2 != 0:
+            numbers_list.remove(n)
+    numbers_str = ' '.join(numbers_list)
+    return print(f'The even numbers are {numbers_str}.')
+    
 if __name__ == "__main__":
     # addnum()
     # addnum_2()
@@ -282,4 +316,5 @@ if __name__ == "__main__":
     # select_del()
     # winner_draw()
     # 통계계산()
-    password_generator()
+    # password_generator()
+    even_filter2()
